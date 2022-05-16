@@ -1,11 +1,4 @@
 .navbar {
-  p {
-    text-transform: uppercase;
-    color: white;
-    font-weight: bolder;
-    margin-top: 20px;
-  }
-
   .container {
     margin-left: 320px;
   }
@@ -14,4 +7,11 @@
     font-size: 30px;
     color: white;
   }
+}
+
+.item {
+  text-transform: uppercase;
+  color: white !important;
+  font-weight: bolder;
+  text-decoration: none;
 }

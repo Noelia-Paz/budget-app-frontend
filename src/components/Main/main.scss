@@ -16,7 +16,7 @@
   }
 
   h2 {
-    color: white;
+    color: black;
     font-weight: bolder;
     text-align: center;
     font-size: 15px;
@@ -26,9 +26,6 @@
     margin-bottom: 87px;
   }
 
-  .btn {
-  }
-
   p {
     text-align: center;
   }
@@ -36,4 +33,27 @@
   body {
     margin: 0;
   }
+}
+
+.image {
+  cursor: inherit !important;
+}
+
+.error-message {
+  color: red;
+}
+
+.form-text {
+  font-size: 15px;
+}
+
+.buttonR {
+  margin-left: 118px;
+}
+
+.btn-outline-info {
+  margin-right: 102px;
+  color: #0dcaf0;
+  font-weight: bolder;
+  border-color: #0dcaf0;
 }

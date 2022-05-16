@@ -2,54 +2,134 @@ import React from "react";
 import "./main.scss";
 import img1 from "../../Images/img1.png";
 import { useNavigate } from "react-router-dom";
+import swal from "sweetalert";
+import { useForm } from "react-hook-form";
+import axios from "axios";
 
-function Main() {
+function Main(props) {
+  const { setIsAuthenticated } = props;
   let navigate = useNavigate();
+
+  const onSubmit = async (data, event) => {
+    event.preventDefault();
+    await axios
+      .post(`${process.env.REACT_APP_API_ROUTE}api/user/signin`, {
+        email: data.email,
+        password: data.password,
+      })
+      .then((res) => {
+        if (res.data.auth) {
+          localStorage.setItem(
+            "isAuthenticated",
+            JSON.stringify(res.data.auth)
+          );
+          localStorage.setItem("userId", JSON.stringify(res.data.userId));
+          setIsAuthenticated(true);
+          navigate("/home");
+          swal({
+            text: "Login successfull!",
+            icon: "success",
+          });
+        } else {
+          swal({
+            text: res.data.message,
+            icon: "error",
+          });
+        }
+      });
+  };
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   return (
     <div className="main_container d-flex justify-content-around p-3">
       <div className=" p-3 text-start m-5 border border-3 border-secondary w-25">
         <h1>Register to start using it!</h1>
-        <form className="border border-3 border-secondary p-5 bg-dark  ">
+        <form
+          className="border border-3 border-secondary p-5 bg-dark"
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <div className="mb-3">
-            <label for="exampleInputEmail1" className="form-label text-white">
+            <label
+              htmlFor="exampleInputEmail1"
+              className="form-label text-white"
+            >
               Email address
             </label>
             <input
-              type="email"
               className="form-control border-white border-2 w-100"
+              type="email"
+              name="email"
+              placeholder="example@gmail.com"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
+              {...register("email", {
+                required: {
+                  value: true,
+                  message: "The field cannot be empty",
+                },
+                pattern: {
+                  value:
+                    /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
+                  message: "The format is not correct",
+                },
+              })}
             />
+            {errors.email && (
+              <span className="error-message">{errors.email.message}</span>
+            )}
             <div id="emailHelp" className="form-text">
               We'll never share your email with anyone else.
             </div>
           </div>
           <div className="mb-3">
             <label
-              for="exampleInputPassword1"
+              htmlFor="exampleInputPassword1"
               className="form-label text-white"
             >
               Password
             </label>
             <input
-              type="password"
               className="form-control border-white border-2 w-100"
+              type="password"
+              name="password"
+              placeholder="Type a password"
               id="exampleInputPassword1"
+              {...register("password", {
+                required: {
+                  value: true,
+                  message: "The field is required",
+                },
+                minLength: {
+                  value: 4,
+                  message: "Write at least 4 characters",
+                },
+              })}
             />
+            {errors.password && (
+              <span className="error-message">{errors.password.message}</span>
+            )}
           </div>
-          <div className="text-center">
-            <button className="btn btn-outline-warning">Login</button>
-            <h2>Don't have an account? Sign up!</h2>
-            <button
-              onClick={() => {
-                navigate("/registerUser");
-              }}
-              class="btn btn-outline-info"
-            >
-              Register
-            </button>
-          </div>
+          <input
+            className="btn btn-outline-warning"
+            type="submit"
+            value="Login"
+          />
         </form>
+        <div className="text-center">
+          <h2>Don't have an account? Sign up!</h2>
+          <button
+            onClick={() => {
+              navigate("/registerUser");
+            }}
+            className="buttonR btn btn-outline-info mr-2"
+          >
+            Register
+          </button>
+        </div>
       </div>
       <div>
         <p>
@@ -58,7 +138,7 @@ function Main() {
           <br />
           You can review your daily expenses and try to improve your savings.
         </p>
-        <img src={img1} alt="" />
+        <img src={img1} alt="" className="image" />
       </div>
     </div>
   );

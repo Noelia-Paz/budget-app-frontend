@@ -1,7 +1,8 @@
-div {
-  margin: 40px;
-  border: 2px solid lightseagreen;
-  padding: 100px;
-  display: grid;
-  justify-content: center;
+.btn-outline-info {
+  font-weight: bolder;
+}
+
+.btnR {
+  display: flex;
+  flex-direction: row-reverse;
 }
