@@ -40,7 +40,7 @@ function Home() {
         </div>
       </div>
       <div className="container">
-        <h1 className="text-center my-3">Last 10 transcations</h1>
+        <h1 className="text-center my-5 fs-2">Last 10 Registrations</h1>
         <table className="table">
           <thead>
             <tr>

@@ -1,8 +1,14 @@
-.btn-outline-info {
-  font-weight: bolder;
-}
-
 .btnR {
   display: flex;
   flex-direction: row-reverse;
+}
+
+.error-message {
+  color: red;
+}
+.btnUser {
+  font-weight: bolder;
+}
+.form-label {
+  font-weight: bolder;
 }

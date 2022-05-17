@@ -58,8 +58,8 @@ function RegisterUser() {
                 message: "The field is required",
               },
               minLength: {
-                value: 4,
-                message: "Write at least 4 characters",
+                value: 3,
+                message: "Write at least 3 characters",
               },
             })}
           />
@@ -122,11 +122,9 @@ function RegisterUser() {
           )}
         </div>
         <div className="btnR">
-          <input
-            className="btn btn-outline-info"
-            type="submit"
-            value="Register"
-          />
+          <button className="btnUser btn btn-outline-info" type="submit">
+            Register
+          </button>
         </div>
       </form>
     </div>

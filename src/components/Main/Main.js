@@ -45,11 +45,11 @@ function Main(props) {
     formState: { errors },
   } = useForm();
   return (
-    <div className="main_container d-flex justify-content-around p-3">
-      <div className=" p-3 text-start m-5 border border-3 border-secondary w-25">
-        <h1>Register to start using it!</h1>
+    <div className="main_container ">
+      <div className="main text-start border border-3 border-secondary ">
+        <h1 className="textRegister">Register to start using it!</h1>
         <form
-          className="border border-3 border-secondary p-5 bg-dark"
+          className="formRegister border border-3 border-secondary  bg-dark"
           onSubmit={handleSubmit(onSubmit)}
         >
           <div className="mb-3">
@@ -113,26 +113,24 @@ function Main(props) {
               <span className="error-message">{errors.password.message}</span>
             )}
           </div>
-          <input
-            className="btn btn-outline-warning"
-            type="submit"
-            value="Login"
-          />
+          <button className="buttonLogin btn btn-outline-warning" type="submit">
+            Login
+          </button>
         </form>
         <div className="text-center">
-          <h2>Don't have an account? Sign up!</h2>
+          <h2 className="textS">Don't have an account? Sign up!</h2>
           <button
             onClick={() => {
               navigate("/registerUser");
             }}
-            className="buttonR btn btn-outline-info mr-2"
+            className="buttonR btn btn-outline-info "
           >
             Register
           </button>
         </div>
       </div>
-      <div>
-        <p>
+      <div className="imgText">
+        <p className="textend">
           Keep your personal or family economy perfectly under control with the
           Expense Manager.
           <br />

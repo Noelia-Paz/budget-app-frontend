@@ -43,8 +43,8 @@ function EditRegistration() {
   } = useForm();
   return (
     <div>
-      <div className=" p-4 d-flex align-items-center flex-column  ">
-        <h1 className="textEdit">Edit the Registration!</h1>
+      <div className=" d-flex align-items-center flex-column  ">
+        <h1 className="textEdit">Edit The Registration!</h1>
         <form
           className="border border-3 border-secondary m-3  p-4 w-25 mb-4 "
           onSubmit={handleSubmit(onSubmit)}
@@ -104,7 +104,7 @@ function EditRegistration() {
           />
         </form>
         <button
-          className="btn btn-outline-secondary w-25 mt-3"
+          className="btn btn-outline-secondary w-25 mb-3 "
           onClick={() => {
             navigate("/home");
           }}

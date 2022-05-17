@@ -48,10 +48,10 @@ function InsertRegistration() {
   } = useForm();
   return (
     <div className=" p-4 d-flex align-items-center flex-column">
-      <h1>Insert a new Registration!</h1>
-      <h3>Select the type of transaction</h3>
+      <h1 className="textTitle">Insert a New Registration!</h1>
+      <h3 className="textType">Select the Type of Registration!</h3>
       <select
-        className="form-select border-info border-2 w-25 mb-5"
+        className="form-select border-info border-2 w-50 mb-5"
         name="type"
         aria-label="Default select example"
         onChange={onTransactionTypeChange}
@@ -60,7 +60,7 @@ function InsertRegistration() {
         <option value="2">Outcome</option>
       </select>
       <form
-        className="border border-3 border-secondary  p-4 w-25 "
+        className="border border-3 border-secondary  p-4 w-50 "
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="mb-3">
@@ -76,11 +76,11 @@ function InsertRegistration() {
             {...register("concept", {
               required: {
                 value: true,
-                message: "El campo es requerido",
+                message: "The field is required",
               },
               minLength: {
                 value: 3,
-                message: "Escribe al menos 3 caracteres",
+                message: "Write at least 3 characters",
               },
             })}
           />
@@ -93,7 +93,7 @@ function InsertRegistration() {
             Amount
           </label>
           <input
-            type="text"
+            type="number"
             name="amount"
             className="form-control border-info border-2"
             id="formGroupExampleInput2"
@@ -101,7 +101,7 @@ function InsertRegistration() {
             {...register("amount", {
               required: {
                 value: true,
-                message: "El campo es requerido",
+                message: "The field is required",
               },
             })}
           />
@@ -121,7 +121,7 @@ function InsertRegistration() {
               {...register("category", {
                 required: {
                   value: true,
-                  message: "El campo es requerido",
+                  message: "The field is required",
                 },
               })}
             >
@@ -155,7 +155,7 @@ function InsertRegistration() {
         </div>
       </form>
       <button
-        className="btn btn-outline-secondary w-25 mt-3"
+        className="btn btn-outline-secondary w-50 mt-3"
         onClick={() => {
           navigate("/home");
         }}

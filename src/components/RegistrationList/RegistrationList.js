@@ -56,7 +56,7 @@ function RegistrationList() {
   console.log(registrationsList);
   return (
     <div className="text-center">
-      <h1>Choose registration type</h1>
+      <h1 className="TextList">Choose Registration Type!</h1>
       <div className="d-flex justify-content-center">
         <select
           className="form-select border-info border-2 w-25 mb-5"

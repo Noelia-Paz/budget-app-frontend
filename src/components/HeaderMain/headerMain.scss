@@ -9,9 +9,39 @@
   }
 }
 
+.Textmanager {
+  text-transform: uppercase;
+  color: white !important;
+  text-decoration: none;
+  font-weight: bolder;
+  margin-left: 10px;
+}
+
 .item {
   text-transform: uppercase;
   color: white !important;
   font-weight: bolder;
-  text-decoration: none;
+  font-size: 15px;
+}
+
+.header {
+  display: flex;
+  padding: 25px;
+  align-items: center;
+  justify-content: space-between;
+
+  .btnlogout {
+    color: red;
+    font-weight: bolder;
+    font-size: 15px;
+  }
+  .iconLogout {
+    color: red;
+    font-size: 18px;
+    margin: 2px;
+  }
+  .itemText {
+    color: whitesmoke;
+    margin-right: 20px;
+  }
 }
