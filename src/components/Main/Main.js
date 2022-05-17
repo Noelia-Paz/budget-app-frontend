@@ -47,9 +47,9 @@ function Main(props) {
   return (
     <div className="main_container ">
       <div className="main text-start border border-3 border-secondary ">
-        <h1 className="textRegister">Register to start using it!</h1>
+        <h1 className="textLogin">Register to start using it!</h1>
         <form
-          className="formRegister border border-3 border-secondary  bg-dark"
+          className="formLogin border border-3 border-secondary  bg-dark"
           onSubmit={handleSubmit(onSubmit)}
         >
           <div className="mb-3">
@@ -117,7 +117,7 @@ function Main(props) {
             Login
           </button>
         </form>
-        <div className="text-center">
+        <div className="cont-button">
           <h2 className="textS">Don't have an account? Sign up!</h2>
           <button
             onClick={() => {

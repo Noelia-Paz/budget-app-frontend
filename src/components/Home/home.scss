@@ -14,3 +14,9 @@
   display: flex;
   flex-direction: row-reverse;
 }
+
+@media screen and (max-width: 650px) {
+  .navbar {
+    flex-direction: column;
+  }
+}

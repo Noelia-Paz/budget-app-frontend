@@ -47,7 +47,7 @@ function InsertRegistration() {
     formState: { errors },
   } = useForm();
   return (
-    <div className=" p-4 d-flex align-items-center flex-column">
+    <div className="container-insert ">
       <h1 className="textTitle">Insert a New Registration!</h1>
       <h3 className="textType">Select the Type of Registration!</h3>
       <select
@@ -60,7 +60,7 @@ function InsertRegistration() {
         <option value="2">Outcome</option>
       </select>
       <form
-        className="border border-3 border-secondary  p-4 w-50 "
+        className=" formInsert border border-3 border-secondary   "
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="mb-3">
@@ -143,10 +143,21 @@ function InsertRegistration() {
             Date
           </label>
           <DatePicker
+            type="date"
+            name="date"
             selected={startDate}
             onChange={(date) => setStartDate(date)}
-            className="border border-info w-100 border-2 container"
+            className="border border-info w-100 border-2 p-2"
+            {...register("date", {
+              required: {
+                value: true,
+                message: "The field is required",
+              },
+            })}
           />
+          {errors.date && (
+            <span className="message">{errors.date.message}</span>
+          )}
         </div>
         <div className="buttonIsertar ">
           <button type="submit" className="btn btn-info w-100 mt-4 ">

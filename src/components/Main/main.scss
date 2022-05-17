@@ -12,11 +12,11 @@
     padding: 18px;
   }
 
-  .formRegister {
+  .formLogin {
     padding: 12px;
   }
 
-  .textRegister {
+  .textLogin {
     text-decoration: none;
     text-transform: uppercase;
     color: black;
@@ -28,7 +28,6 @@
   .textS {
     color: black;
     font-weight: bolder;
-    text-align: center;
     font-size: 15px;
     margin-top: 12px;
   }
@@ -50,10 +49,98 @@
     font-size: 15px;
   }
 
+  .cont-button {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .buttonR {
+      font-weight: bold;
+    }
+  }
+
   .imgText {
     display: flex;
     width: 50%;
     flex-direction: column-reverse;
     align-items: center;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .main_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .image {
+      margin-bottom: 0px;
+    }
+
+    .imgText {
+      margin: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .main_container {
+    .main {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .main_container {
+    .textLogin {
+      font-size: 10px;
+    }
+
+    .formLogin {
+      .buttonLogin {
+        font-size: 10px;
+      }
+    }
+
+    .textS {
+      font-size: 10px;
+    }
+
+    .cont-button {
+      .buttonR {
+        font-size: 10px;
+      }
+    }
+
+    .imgText {
+      margin: 0px;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .main_container {
+    padding: 10px;
+    .imgText {
+      width: 100%;
+      flex-direction: column;
+      margin: 10px;
+    }
+
+    .textend {
+      font-size: 10px;
+    }
+
+    .form-label {
+      font-size: 10px;
+    }
+
+    .form-text {
+      font-size: 8px;
+    }
+
+    .form-control {
+      padding: 0px;
+    }
   }
 }
