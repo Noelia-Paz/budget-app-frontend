@@ -9,3 +9,11 @@
   background-image: url("../../Images/img2.jpeg");
   height: 100vh;
 }
+
+@media screen and (max-width: 750px) {
+  .container-edit {
+    .form-edit {
+      width: 75%;
+    }
+  }
+}

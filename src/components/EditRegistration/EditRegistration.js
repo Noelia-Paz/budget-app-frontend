@@ -46,7 +46,7 @@ function EditRegistration() {
       <div className="container-edit d-flex align-items-center flex-column  ">
         <h1 className="textEdit">Edit The Registration!</h1>
         <form
-          className="border border-3 border-secondary m-3  p-4 w-25 mb-4 "
+          className="form-edit border border-3 border-secondary m-3  p-4 w-25 mb-4 "
           onSubmit={handleSubmit(onSubmit)}
         >
           <div className="mb-3">

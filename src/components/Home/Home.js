@@ -30,8 +30,8 @@ function Home() {
   }, [balance]);
 
   return (
-    <div>
-      <div className="d-flex justify-content-center my-5">
+    <div className="container-home">
+      <div className="card-content d-flex justify-content-center my-5">
         <div className="card text-bg-light text-center shadow-lg">
           <div className="card-body">
             <div className="card-title">Your balance is:</div>
@@ -39,49 +39,53 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="container">
+      <div className="cont-home">
         <h1 className="text-center my-5 fs-2">Last 10 Registrations</h1>
-        <table className="table">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Concept</th>
-              <th scope="col">Amount</th>
-              <th scope="col">Registration Type</th>
-              <th scope="col">Category</th>
-              <th scope="col">Date</th>
-              <th scope="col"></th>
-            </tr>
-          </thead>
-          <tbody>
-            {registrations.map((registration, index) => {
-              return (
-                <tr key={index}>
-                  <th scope="row">{index + 1}</th>
-                  <td>{registration.concept}</td>
-                  <td>{registration.amount}</td>
-                  <td>{registration.registrationTypeId}</td>
-                  <td>
-                    {registration.categoryId ? registration.categoryId : "None"}
-                  </td>
-                  <td>{registration.date}</td>
-                  <td>
-                    <button
-                      onClick={() => {
-                        navigate("/editRegistration", {
-                          state: { registration },
-                        });
-                      }}
-                      className="btn btn-warning"
-                    >
-                      Edit
-                    </button>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+        <div className="table-responsive">
+          <table className="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Concept</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Registration Type</th>
+                <th scope="col">Category</th>
+                <th scope="col">Date</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {registrations.map((registration, index) => {
+                return (
+                  <tr key={index}>
+                    <th scope="row">{index + 1}</th>
+                    <td>{registration.concept}</td>
+                    <td>{registration.amount}</td>
+                    <td>{registration.registrationTypeId}</td>
+                    <td>
+                      {registration.categoryId
+                        ? registration.categoryId
+                        : "None"}
+                    </td>
+                    <td>{registration.date}</td>
+                    <td>
+                      <button
+                        onClick={() => {
+                          navigate("/editRegistration", {
+                            state: { registration },
+                          });
+                        }}
+                        className="btn btn-warning"
+                      >
+                        Edit
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

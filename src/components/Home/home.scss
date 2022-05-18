@@ -1,22 +1,48 @@
-.card {
-  width: 18rem;
-}
-
-.newTransactionBtn {
-  border-radius: 30px;
-  background: mediumseagreen;
-  font-size: 28px;
-  border: solid black;
-  cursor: pointer;
-}
-
-.Add {
+.container-home {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+
+  .cont-home {
+    width: 75%;
+  }
+
+  .card {
+    width: 18rem;
+  }
+
+  .newTransactionBtn {
+    border-radius: 30px;
+    background: mediumseagreen;
+    font-size: 28px;
+    border: solid black;
+    cursor: pointer;
+  }
+
+  .Add {
+    display: flex;
+    flex-direction: row-reverse;
+  }
 }
 
 @media screen and (max-width: 650px) {
   .navbar {
     flex-direction: column;
+  }
+
+  .text-center {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+    font-size: 20px;
+  }
+
+  .card-content {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .container-home {
+    margin-top: 10px;
   }
 }
