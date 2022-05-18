@@ -68,7 +68,7 @@ function RegistrationList() {
           <option value="outcome">Outcome</option>
         </select>
       </div>
-      <div className="container">
+      <div className="container table-responsive">
         <table className="table">
           <thead>
             <tr>

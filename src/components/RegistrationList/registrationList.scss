@@ -3,3 +3,10 @@
   margin: 25px;
   margin-top: 90px;
 }
+
+@media screen and (max-width: 760px) {
+  .form-select {
+    margin-bottom: 1rem !important;
+    width: 75% !important;
+  }
+}

@@ -10,10 +10,26 @@
   height: 100vh;
 }
 
+@media screen and (max-width: 1200px) {
+  .container-edit {
+    .form-edit {
+      width: 50% !important;
+    }
+  }
+
+  .BtnAtras {
+    width: 50% !important;
+  }
+}
+
 @media screen and (max-width: 750px) {
   .container-edit {
     .form-edit {
-      width: 75%;
+      width: 75% !important ;
     }
+  }
+
+  .BtnAtras {
+    width: 75% !important;
   }
 }

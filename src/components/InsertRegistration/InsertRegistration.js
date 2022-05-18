@@ -143,21 +143,10 @@ function InsertRegistration() {
             Date
           </label>
           <DatePicker
-            type="date"
-            name="date"
             selected={startDate}
             onChange={(date) => setStartDate(date)}
             className="border border-info w-100 border-2 p-2"
-            {...register("date", {
-              required: {
-                value: true,
-                message: "The field is required",
-              },
-            })}
           />
-          {errors.date && (
-            <span className="message">{errors.date.message}</span>
-          )}
         </div>
         <div className="buttonIsertar ">
           <button type="submit" className="btn btn-info w-100 mt-4 ">

@@ -11,8 +11,6 @@ function Header(props) {
   let navigate = useNavigate();
   const [username, setUsername] = useState("");
 
-  const userId = JSON.parse(localStorage.getItem("userId"));
-
   const logout = () => {
     localStorage.setItem("isAuthenticated", "false");
     setIsAuthenticated(false);
@@ -20,6 +18,7 @@ function Header(props) {
   };
 
   const getUsername = async () => {
+    const userId = await JSON.parse(localStorage.getItem("userId"));
     const username = await axios.get(
       `${process.env.REACT_APP_API_ROUTE}api/data/username/${userId}`
     );
@@ -28,7 +27,7 @@ function Header(props) {
 
   useEffect(() => {
     getUsername();
-  }, []);
+  }, [isAuthenticated]);
 
   return (
     <nav className="navbar navbar-success bg-success d-flex justify-content-between ">

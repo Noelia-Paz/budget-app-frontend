@@ -75,6 +75,24 @@
       .iconUser {
         font-size: 14px;
       }
+      .header {
+        .item {
+          font-size: 5px;
+          padding: 5px;
+        }
+        .btnlogout {
+          font-size: 5px;
+          padding: 5px;
+        }
+
+        .iconLogout {
+          font-size: 5px;
+        }
+        .itemText {
+          font-size: 5px;
+          margin-right: 1px;
+        }
+      }
     }
   }
 }

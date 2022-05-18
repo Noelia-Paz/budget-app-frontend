@@ -104,7 +104,7 @@ function EditRegistration() {
           />
         </form>
         <button
-          className="btn btn-outline-secondary w-25 mb-3 "
+          className="BtnAtras btn btn-outline-secondary w-25 mb-3 "
           onClick={() => {
             navigate("/home");
           }}
